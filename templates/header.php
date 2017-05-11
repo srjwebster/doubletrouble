@@ -4,12 +4,25 @@
   </div>
   <div class="container">
     <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-    <nav class="nav-primary">
-      <?php
-      if (has_nav_menu('primary_navigation')) :
-        wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
+    <nav class="nav-top">
+
+<!-- left side of the navigation menu -->
+
+        <?php
+      if (has_nav_menu('top_left_navigation')) :
+        wp_nav_menu(['theme_location' => 'top_left_navigation', 'menu_class' => 'nav', 'fallback_cb' => false]);
       endif;
       ?>
+<!-- space for centered logo -->
+        
+      
+<!-- right side of the navigation menu -->
+      <?php
+      if (has_nav_menu('top_right_navigation')) :
+	      wp_nav_menu(['theme_location' => 'top_right_navigation', 'menu_class' => 'nav', 'fallback_cb' => false]);
+      endif;
+      ?>
+
     </nav>
   </div>
 </header>

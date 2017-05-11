@@ -3,7 +3,37 @@
   width: 100%;
   text-align: center;
   background-color: $brand-secondary;
-  color:$brand-text-2;
+  color: $brand-text-2;
   font: 500 16pt apercu;
-  padding:20px 0;
+  padding: 20px 0;
+}
+
+.nav-top a {
+  font: 400 14pt apercu;
+  color: $brand-text-1;
+}
+
+.nav-top a:hover, .nav-top .active a {
+  font: 400 14pt apercu;
+  color: $brand-text-2;
+  text-decoration: underline $brand-text-2;
+}
+
+.nav-top .nav {
+  display: inline-block;
+}
+
+.nav-top .nav li {
+  display: inline-block;
+  padding:0 10px;
+}
+
+#menu-top-left-menu {
+  position: absolute;
+  left: 10px;
+}
+
+#menu-top-right-menu {
+  position: absolute;
+  right: 10px;
 }

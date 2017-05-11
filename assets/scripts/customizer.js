@@ -5,4 +5,5 @@
       $('.brand').text(to);
     });
   });
-})(jQuery);
+}
+)(jQuery);
