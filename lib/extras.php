@@ -61,3 +61,9 @@ if( function_exists('acf_add_options_page') ) {
         'parent_slug'	=> 'theme-general-settings',
     ));
 }
+
+// removing actions as per https://roots.io/using-woocommerce-with-sage/ guide
+
+add_filter('woocommerce_show_page_title', '__return_false');
+// remove product meta information (because it's ugly)
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);

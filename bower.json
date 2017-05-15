@@ -8,6 +8,6 @@
   "private": true,
   "dependencies": {
     "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.6",
-    "slidebars": "^2.0.2"
+    "fontawesome": "^4.7.0"
   }
 }

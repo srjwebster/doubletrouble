@@ -4,39 +4,54 @@
   text-align: center;
   background-color: $brand-secondary;
   color: $brand-text-2;
-  font: 500 16pt apercu;
-  padding: 20px 0;
+  font: 500 1rem apercu;
+}
+.shipping-banner{
+  padding: 1.25% 0;
+}
+.nav-top {
+  padding: 10px 0 0;
+  text-align: center;
 }
 
 .nav-top a {
-  font: 400 14pt apercu;
-  color: $brand-text-1;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 .nav-top a:hover, .nav-top .active a {
-  font: 400 14pt apercu;
   color: $brand-text-2;
   text-decoration: underline $brand-text-2;
 }
 
-.nav-top .nav {
-  display: inline-block;
+.nav-top ul {
+  padding-left: 0;
+  list-style: none;
+  position: absolute;
+  top: 10px;
 }
 
-.nav-top .nav li {
+.nav-top li {
   display: inline-block;
-  padding:0 10px;
+  padding: 0 10px;
 }
 
 #menu-top-left-menu {
-  position: absolute;
-  left: 10px;
+  left: 0;
 }
 
 #menu-top-right-menu {
-  position: absolute;
-  right: 10px;
+  right: 0;
 }
-.mobile-nav{
-  background-color: $brand-secondary;
+
+.branding {
+  max-width: 200px;
+  width: 35%;
+  text-align: center;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.branding img {
+  width: 100%;
 }

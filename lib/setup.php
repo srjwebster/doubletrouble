@@ -15,6 +15,7 @@ function setup() {
 	add_theme_support( 'soil-nice-search' );
 	add_theme_support( 'soil-jquery-cdn' );
 	add_theme_support( 'soil-relative-urls' );
+	add_theme_support('woocommerce');
 
 	// Make theme available for translation
 	// Community translations can be found at https://github.com/roots/sage-translations
@@ -59,7 +60,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\\setup' );
  * Register sidebars
  */
 function widgets_init() {
-	register_sidebar( [
+	/*register_sidebar( [
 		'name'          => __( 'Primary', 'sage' ),
 		'id'            => 'sidebar-primary',
 		'before_widget' => '<section class="widget %1$s %2$s">',
@@ -75,7 +76,7 @@ function widgets_init() {
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3>',
 		'after_title'   => '</h3>'
-	] );
+	] );*/
 }
 
 add_action( 'widgets_init', __NAMESPACE__ . '\\widgets_init' );

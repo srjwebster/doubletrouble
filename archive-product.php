@@ -1,3 +1,5 @@
+<?php get_template_part('templates/page', 'header'); ?>
+
 <?php
 /**
  * woocommerce_before_main_content hook.

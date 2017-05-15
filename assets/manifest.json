@@ -1,5 +1,10 @@
 {
   "dependencies": {
+    "dt-logo-min.jpg": {
+      "files": [
+        "dt-logo-min.jpg"
+      ]
+    },
     "main.js": {
       "files": [
         "scripts/main.js"
