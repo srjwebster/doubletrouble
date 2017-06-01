@@ -21,15 +21,28 @@
   font-weight: 300;
   font-style: normal;
 }
+
 body {
   font: 400 16pt apercu;
   color: $brand-text-1;
-  line-height:1.5;
+  line-height: 1.5;
 }
+
 $font1-r-m: 400 0.9em apercu;
-a{
-  color:$brand-text-1 ;
+a {
+  color: $brand-text-1;
 }
-a:hover{
-  color:$brand-text-2;
+
+a:hover {
+  color: $brand-text-2;
+}
+
+.fa-heart {
+  color: $brand-text-2;
+}
+
+.fa-heart.page-end {
+  display: block;
+  text-align: center;
+  margin: 0 auto 2em;
 }

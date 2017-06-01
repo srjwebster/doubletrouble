@@ -15,20 +15,16 @@
 			endif;
 			?>
             <!-- space for centered logo -->
-            <div class="branding"><img class="main-logo" src="<?php echo \Roots\Sage\Assets\asset_path( 'images/dt-logo-min.jpg' ); ?>">
+            <div class="branding"><a href="<?php echo home_url( "/", "relative" ); ?>"><img
+                            src="<?php echo \Roots\Sage\Assets\asset_path( 'images/dt-logo-min.jpg' ); ?>"
+                            class="main-logo"
+                    ></a>
             </div>
 
             <!-- right side of the navigation menu -->
 			<?php
-			if ( has_nav_menu( 'top_right_navigation' ) ) :
-				wp_nav_menu( [
-					'theme_location' => 'top_right_navigation',
-					'menu_class'     => 'hidden-sm-down',
-					'fallback_cb'    => false
-				] );
-			endif;
+			do_action('right_navigation_with_cart');
 			?>
-
         </nav>
     </div>
 </header>

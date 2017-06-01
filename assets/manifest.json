@@ -5,6 +5,11 @@
         "dt-logo-min.jpg"
       ]
     },
+    "select-dropdown.png": {
+      "files": [
+        "select-dropdown.png"
+      ]
+    },
     "main.js": {
       "files": [
         "scripts/main.js"

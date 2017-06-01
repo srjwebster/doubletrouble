@@ -1,0 +1,65 @@
+span .woocommerce-Price-amount, .woocommerce ul.products li.product .price {
+  color: $brand-text-2;
+  text-decoration: underline;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.archive-title {
+  color: $brand-text-2;
+  margin-right: 3em;
+}
+
+ul.products {
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Chrome */
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.woocommerce ul.products li.product {
+  float: none;
+  margin: 0 auto 3em;
+  width: 33%;
+  min-width: 300px;
+}
+
+.woocommerce ul.products li.product a img {
+  margin: 0;
+}
+
+.colour_swatch_row {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  bottom: 4em;
+  right: 2em;
+  text-align: right;
+}
+
+span.colour_swatch {
+  width: 20px;
+  height: 20px;
+  margin: 0 20px 0 0;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, .12);
+  display: inline-block;
+}
+
+.colour_swatch.white {
+  background-color: white;
+}
+
+.colour_swatch.black {
+  background-color: black;
+}
+
+.colour_swatch.red {
+  background-color: red;
+}
+
+.colour_swatch.pale-pink {
+  background-color: pink;
+}

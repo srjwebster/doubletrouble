@@ -48,10 +48,19 @@
   max-width: 200px;
   width: 35%;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   display: inline-block;
 }
 
 .branding img {
   width: 100%;
+}
+
+.nav-cart-total{
+  font-size:0.5em;
+  right:0;
+  display:inline-block;
+}
+.cart-area{
+  right:0;
 }

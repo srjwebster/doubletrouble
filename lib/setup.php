@@ -4,6 +4,10 @@ namespace Roots\Sage\Setup;
 
 use Roots\Sage\Assets;
 
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
+
 /**
  * Theme setup
  */
@@ -93,6 +97,8 @@ function display_sidebar() {
 		is_404(),
 		is_front_page(),
 		is_page_template( 'template-custom.php' ),
+		//disabling sidebar
+		true
 	] );
 
 	return apply_filters( 'sage/display_sidebar', $display );
@@ -112,3 +118,4 @@ function assets() {
 }
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100 );
+

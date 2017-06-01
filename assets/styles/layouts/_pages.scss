@@ -1,0 +1,214 @@
+main::after {
+}
+
+#container {
+  height: 100%;
+}
+
+.front-page-row {
+  white-space: nowrap;
+}
+.archive-page-row {
+  white-space: nowrap;
+}
+.archive-row-divider{
+  display:block;
+  width:100%;
+}
+.two-image-row {
+  width: 100%;
+  text-align: center;
+}
+
+.content-row {
+  text-align: center;
+  width: 80%;
+  position: relative;
+  display: inline-block;
+  white-space: normal;
+}
+
+.content-box {
+  text-align: center;
+  width: 49%;
+  position: relative;
+  display: inline-block;
+  white-space: normal;
+}
+
+.content-box.right-box-image {
+  margin: 1% 0 1% 1%;
+}
+
+.content-box.right-box-text {
+  margin: 1% 0 1% 1%;
+  vertical-align: bottom;
+}
+.content-box.left-box-text {
+  margin: 1% 1% 1% 0;
+  vertical-align: bottom;
+}
+
+.content-box.right-box-text a {
+
+}
+
+.content-box.right-box-text:before,.content-box.left-box-text:before  {
+  content: "";
+  padding-top: 100%;
+  display: block;
+}
+
+.content-box.left-box-image {
+  margin: 1% 1% 1% 0;
+}
+
+.content-box a {
+  color: $brand-text-2;
+}
+
+.content-box span {
+  text-decoration: underline;
+}
+
+.content-box span.right-text-1 {
+  text-decoration: none;
+  padding: 0 5%;
+}
+
+.content-box.left-box-image img, .content-box.right-box-image img {
+  width: 100%;
+}
+
+.position-none {
+  display: none;
+}
+
+.position-left-top {
+  position: absolute;
+  left: 7.5%;
+  top: 5%;
+}
+
+.position-center-top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5%;
+}
+
+.position-right-top {
+  position: absolute;
+  right: 0;
+  top: 5%;
+}
+
+.position-left-middle {
+  position: absolute;
+  left: 7.5%;
+  bottom: 50%;
+}
+
+.position-center-middle {
+  position: absolute;
+  left: 0;
+  right:0;
+  bottom: 42%;
+}
+
+.position-right-middle {
+  position: absolute;
+  right: 7.5%;
+  bottom: 50%;
+}
+
+.position-left-bottom {
+  position: absolute;
+  left: 7.5%;
+  bottom: 5%;
+}
+
+.position-center-bottom {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+}
+
+.position-right-bottom {
+  position: absolute;
+  right: 7.5%;
+  bottom: 5%;
+}
+
+.full-width-text {
+  width: 100%;
+  padding: 5% 10%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.full-width-text a {
+  text-decoration: underline;
+}
+
+.full-width-text h2 {
+  font-weight: 400;
+  font-size: 1.5em;
+  line-height: 1.6;
+}
+
+.front-page-row:last-of-type {
+  padding: 5% 10% 0
+}
+.product-navigation{
+  width:100%;
+  top:2%;
+  position:absolute;
+  z-index:1;
+}
+.product-navigation ul{
+  list-style: none;
+  text-align: center;
+}
+.product-navigation ul li{
+  display:inline-block;
+  margin:0 2%;
+}
+.product-navigation a:active{
+  color: #e71c24;
+  text-decoration: underline #e71c24;
+}
+@media (max-width: 768px) {
+  #container{height:inherit;}
+  .content-box {
+    width: 100%;
+  }
+  .content-box.right-box-text {
+    margin: 0 0 1%;
+  }
+  .content-box.left-box-text {
+    margin: 0 0 1%;
+  }
+  .content-box.right-box-image {
+    margin: 0 0 1%;
+  }
+  .content-box.left-box-image {
+    margin: 0 0 1%;
+  }
+  .full-width-text {
+    padding: 5% 5%;
+  }
+  .full-width-text h2 {
+    font-size: 1.3em;
+  }
+  .front-page-row {
+    white-space: normal;
+  }
+  .archive-page-row {
+    white-space: normal;
+  }
+  .archive-page-row .left-box-text::before{
+    padding-top: 30%;
+  }
+}

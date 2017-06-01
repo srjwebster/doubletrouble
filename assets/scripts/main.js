@@ -23,30 +23,7 @@
             finalize: function () {
                 // JavaScript to be fired on all pages, after page specific JS is fired
                 (function ($) {
-                    // Initialize Slidebars
-                    var Controller = new Slidebars();
-                    Controller.init();
-                    // Toggle Slidebars
-                    $( '.toggle-mobile-nav' ).on( 'click', function ( event ) {
-                        // Stop default action and bubbling
-                        event.stopPropagation();
-                        event.preventDefault();
-                        // Toggle the Slidebar with id 'mobile-nav'
-                        Controller.toggle( 'mobile-nav' );
-                        // Click off menu close
-                        $( Controller.events ).on( 'opened', function () {
-                            $( '[canvas="container"]' ).addClass( 'js-close-any-slidebar' );
-                        } );
-
-                        $( Controller.events ).on( 'closed', function () {
-                            $( '[canvas="container"]' ).removeClass( 'js-close-any-slidebar' );
-                        } );
-
-                        $( 'body' ).on( 'click', '.js-close-any-slidebar', function ( event ) {
-                            event.stopPropagation();
-                            Controller.close();
-                        } );
-                    } );
+                   
                 })(jQuery);
             }
         },

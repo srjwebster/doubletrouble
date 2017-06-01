@@ -2,7 +2,6 @@
 
 use Roots\Sage\Setup;
 use Roots\Sage\Wrapper;
-
 ?>
 
 <!doctype html>
@@ -23,6 +22,7 @@ get_template_part( 'templates/header' );
     <div class="content row">
         <main class="main">
 			<?php include Wrapper\template_path(); ?>
+            <i class="fa fa-heart page-end" aria-hidden="true"></i>
         </main><!-- /.main -->
 		<?php if ( Setup\display_sidebar() ) : ?>
             <aside class="sidebar">

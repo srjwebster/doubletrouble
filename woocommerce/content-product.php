@@ -41,6 +41,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 *
 	 * @hooked woocommerce_show_product_loop_sale_flash - 10
 	 * @hooked woocommerce_template_loop_product_thumbnail - 10
+     * @hooked colour_swatch - 15
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 
@@ -49,7 +50,15 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 *
 	 * @hooked woocommerce_template_loop_product_title - 10
 	 */
-	do_action( 'woocommerce_shop_loop_item_title' );
+	// do_action( 'woocommerce_shop_loop_item_title' );
+	echo "<span class=\"archive-title\">" . get_the_title() . "</span>";
+
+	/**
+	 * colour-swatches hook.
+	 *
+	 * @hooked colour-swatches from extras.php - 5
+	 *
+	 */
 
 	/**
 	 * woocommerce_after_shop_loop_item_title hook.
@@ -57,6 +66,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_rating - 5
 	 * @hooked woocommerce_template_loop_price - 10
 	 */
+
 	do_action( 'woocommerce_after_shop_loop_item_title' );
 
 	/**
