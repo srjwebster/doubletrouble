@@ -8,13 +8,20 @@
   "private": true,
   "dependencies": {
     "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.6",
-    "fontawesome": "^4.7.0"
+    "fontawesome": "^4.7.0",
+    "lity": "^2.2.2"
   },
   "overrides":{
     "fontawesome": {
       "main": [
         "./scss/font-awesome.scss",
         "./fonts/*"
+      ]
+    },
+    "lity": {
+      "main": [
+        "./dist/lity.css",
+        "./dist/lity.js"
       ]
     }
   }

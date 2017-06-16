@@ -22,9 +22,7 @@
             },
             finalize: function () {
                 // JavaScript to be fired on all pages, after page specific JS is fired
-                (function ($) {
-                   
-                })(jQuery);
+
             }
         },
         // Home page
@@ -41,7 +39,78 @@
             init: function () {
                 // JavaScript to be fired on the about us page
             }
+        },
+        'single_product': {
+            init: function () {
+
+            },
+            finalize: function () {
+                jQuery(document).ready(function ($) {
+
+                    $('.woocommerce-main-image a img').loupe({
+                        width: 300,
+                        height: 300
+                    })
+                    ;
+                    $(this).on('keyup change', '.custom-box textarea', function () {
+
+                        if ($(this).attr('maxlength') > 0) {
+
+                            var value = $(this).val();
+                            var remaining = $(this).attr('maxlength') - value.length;
+
+                            $(this).next('.chars_remaining').find('span').text(remaining);
+                        }
+
+                    });
+
+                    $(this).find(' .custom-box textarea').each(function () {
+
+                        if ($(this).attr('maxlength') > 0) {
+
+                            $(this).after('<small class="chars_remaining"><span> ...' + $(this).attr('maxlength') + '</span> characters remaining.<br>The preview may not be 100% accurate, but we\'ll make sure it\'s fly.</small>');
+
+                        }
+
+                    });
+
+
+                    $('body').on("click", ".colour-example", function () {
+                        var $select = $(this).attr('name');
+                        $('#pa_colour').val($select).change();
+                    });
+                    $('body').on("click", ".woocommerce-product-gallery__wrapper a", function (event) {
+                        event.preventDefault();
+                        var thumbsrcset = $(event.target).attr('srcset');
+                        $('.woocommerce-main-image img').attr('srcset', thumbsrcset);
+                        var zoomsrc = $(event.target).attr('data-src');
+                        $('div.loupe img').attr('src', zoomsrc);
+
+
+                    });
+
+                    $('body').on("hover", ".woocommerce-product-gallery__wrapper a", function (event) {
+                        event.preventDefault();
+                        var zoomsrc = $(event.target).attr('data-src');
+                        $('div.loupe img').attr('src', zoomsrc);
+                    });
+
+
+
+                    $('.custom-box textarea').keyup(function (event) {
+                        $("#customtext").html($(this).val().replace(/\n/g, '<br/>'));
+                    });
+
+                    $(this).on("change", "#pa_embroidery-colour", function () {
+                        $('#customtext').removeClass().addClass($(this).val());
+                    });
+
+                });
+
+
+            }
         }
+
     };
 
     // The routing fires all common scripts, followed by the page specific scripts.

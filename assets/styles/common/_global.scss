@@ -22,10 +22,18 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'doubletrouble';
+  src: url('../fonts/BrushScriptStd.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   font: 400 16pt apercu;
   color: $brand-text-1;
   line-height: 1.5;
+  outline:none;
 }
 
 $font1-r-m: 400 0.9em apercu;
@@ -39,6 +47,11 @@ a:hover {
 
 .fa-heart {
   color: $brand-text-2;
+  margin: 0 5px;
+}
+.fa-heart-o{
+  color: $brand-text-2;
+  margin: 0 5px;
 }
 
 .fa-heart.page-end {

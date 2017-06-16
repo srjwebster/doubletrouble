@@ -35,11 +35,18 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 		<?php else : ?>
             <table class="variations" cellspacing="0">
                 <tbody>
+				<?php
+				if ( preg_match( '/Custom/', $product->post->post_title ) ) { ?>
+                    <tr>
+                        <td class="custom-box">
+                            <label for="custom-embroidery">Write it out</label>
+                            <textarea data-price name="custom-embroidery" maxlength="30" placeholder=""
+                                      rows="3"></textarea>
+                        </td>
+                    </tr>
+				<?php } ?>
 				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
                     <tr>
-                        <!--<td class="label"><label
-                                    for="<?php /*echo sanitize_title( $attribute_name ); */ ?>"><?php /*echo wc_attribute_label( $attribute_name ); */ ?></label>
-                        </td>-->
                         <td class="value">
 							<?php
 							$selected = isset( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ) ) : $product->get_variation_default_attribute( $attribute_name );
@@ -55,6 +62,20 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
                         </td>
                     </tr>
 				<?php endforeach; ?>
+
+				<?php
+				if ( isset( $attributes['pa_colour'] ) ) { ?>
+                    <tr class="colour-example-row">
+                    <td>
+						<?php echo'<span>COLOUR</span>';
+						foreach ( $attributes['pa_colour'] as $colour ) {
+							echo '<i class="fa fa-heart colour-example garment-colour-' . $colour . '" name="' . $colour . '"></i>';
+						}
+						?>
+                    </td>
+                    </tr><?php
+				} ?>
+
                 </tbody>
             </table>
 

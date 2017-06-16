@@ -27,12 +27,22 @@
         "scripts/customizer.js"
       ]
     },
+    "jquery.loupe.min.js": {
+      "files": [
+        "scripts/jquery.loupe.min.js"
+      ]
+    },
     "jquery.js": {
       "bower": ["jquery"]
     },
     "apercu-light-webfont.woff": {
       "files": [
         "fonts/apercu-light-webfont.woff"
+      ]
+    },
+    "BrushScriptStd.otf":{
+      "files": [
+        "fonts/BrushScriptStd.otf"
       ]
     }
   },

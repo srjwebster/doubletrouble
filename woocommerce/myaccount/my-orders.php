@@ -14,7 +14,7 @@ $my_orders_columns = apply_filters( 'woocommerce_my_account_my_orders_columns', 
 	'order-date'    => __( 'Date', 'woocommerce' ),
 	'order-status'  => __( 'Status', 'woocommerce' ),
 	'order-total'   => __( 'Total', 'woocommerce' ),
-	'order-actions' => '&nbsp;',
+	'order-actions' => '',
 ) );
 
 $customer_orders = get_posts( apply_filters( 'woocommerce_my_account_my_orders_query', array(

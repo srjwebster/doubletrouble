@@ -26,11 +26,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p><?php
 	/* translators: 1: order number 2: order date 3: order status */
 	printf(
-		__( 'Order #%1$s was placed on %2$s and is currently %3$s.', 'woocommerce' ),
-		'<mark class="order-number">' . $order->get_order_number() . '</mark>',
-		'<mark class="order-date">' . wc_format_datetime( $order->get_date_created() ) . '</mark>',
-		'<mark class="order-status">' . wc_get_order_status_name( $order->get_status() ) . '</mark>'
+		__( 'Your order number #%1$s was placed on %2$s and is currently %3$s.', 'woocommerce' ),
+		'<span class="order-number">' . $order->get_order_number() . '</span>',
+		'<span class="order-date">' . wc_format_datetime( $order->get_date_created() ) . '</span>',
+		'<span class="order-status">' . wc_get_order_status_name( $order->get_status() ) . '</span>'
 	);
+	if(wc_get_order_status_name($order->get_status) == 'Processing'){
+		echo '<span>You will receive an email once your order has been shipped.</span>';
+    }
+    elseif(wc_get_order_status_name($order->get_status) == 'Processing')
 ?></p>
 
 <?php if ( $notes = $order->get_customer_order_notes() ) : ?>

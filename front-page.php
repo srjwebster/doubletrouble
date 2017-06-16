@@ -71,3 +71,45 @@
 		}
 	} ?>
 </div>
+
+<?php
+
+print_r();
+
+$args = array(
+	'post_type' => 'product'
+);
+$loop = new WP_Query( $args );
+if ( $loop->have_posts() ) {
+	while ( $loop->have_posts() ) : $loop->the_post();
+	    $name = $product->get_title();
+	    if (preg_match('/Tee/', $name)){
+            $postid = $product->get_ID();
+
+		    foreach(array_keys(WCPBC()->get_regions()) as $region){
+
+			    update_post_meta($postid, '_euro_min_variation_price', 58);
+			    update_post_meta($postid, '_euro_max_variation_price', 58);
+			    update_post_meta($postid, '_euro_min_variation_regular_price', 58);
+			    update_post_meta($postid, '_euro_man_variation_regular_price', 58);
+			    update_post_meta($postid, '_euro_max_sale_price_variation_id', 58);
+			    update_post_meta($postid, '_euro_price', 58);
+			    $meta_ids = array();
+			    foreach ($product->get_available_variations() as $variations){
+				    array_push ($meta_ids, $variations['id']);
+			    }
+			    foreach($meta_ids as $meta_id){
+				    update_post_meta($meta_id,'_euro_price',58);
+				    update_post_meta($meta_id,'_euro_regular_price',58);
+				    update_post_meta($meta_id,'_euro_price_method', 'manual');
+			    }
+
+            }
+
+        }
+	endwhile;
+} else {
+
+}
+wp_reset_postdata();
+?>

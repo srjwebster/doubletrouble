@@ -43,7 +43,6 @@
 #menu-top-right-menu {
   right: 0;
 }
-
 .branding {
   max-width: 200px;
   width: 35%;
@@ -60,6 +59,11 @@
   font-size:0.5em;
   right:0;
   display:inline-block;
+}
+@media(max-width:768px){
+  .nav-top ul{
+    position: relative;
+  }
 }
 .cart-area{
   right:0;

@@ -10,9 +10,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
+ * @see        https://docs.woocommerce.com/document/template-structure/
+ * @author        WooThemes
+ * @package    WooCommerce/Templates
  * @version     2.0.0
  */
 
@@ -22,15 +22,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( is_user_logged_in() || 'no' === get_option( 'woocommerce_enable_checkout_login_reminder' ) ) {
 	return;
-}
+} ?>
+    <div class="checkout-notice">
+        <h3>SHOPPED BEFORE?</h3>
+        <a href="#" class="showlogin button" style="background-color:#ffffff; color:red; border: 3px solid #fff0fc;
+width:300px;text-align: center">LOGIN HERE</a>
+    </div>
 
-$info_message  = apply_filters( 'woocommerce_checkout_login_message', __( 'Returning customer?', 'woocommerce' ) );
-$info_message .= ' <a href="#" class="showlogin">' . __( 'Click here to login', 'woocommerce' ) . '</a>';
-wc_print_notice( $info_message, 'notice' );
-
-woocommerce_login_form(
+<?php woocommerce_login_form(
 	array(
-		'message'  => __( 'If you have shopped with us before, please enter your details in the boxes below. If you are a new customer, please proceed to the Billing &amp; Shipping section.', 'woocommerce' ),
+		'message'  => 'If you already have an account, login here. If it\'s your first time, complete the sections below instead.',
 		'redirect' => wc_get_page_permalink( 'checkout' ),
 		'hidden'   => true,
 	)
