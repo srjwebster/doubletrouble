@@ -12,7 +12,9 @@
     },
     "main.js": {
       "files": [
-        "scripts/main.js"
+        "scripts/jquery.loupe.min.js",
+        "scripts/main.js",
+        "scripts/gatags.js"
       ],
       "main": true
     },
@@ -25,11 +27,6 @@
     "customizer.js": {
       "files": [
         "scripts/customizer.js"
-      ]
-    },
-    "jquery.loupe.min.js": {
-      "files": [
-        "scripts/jquery.loupe.min.js"
       ]
     },
     "jquery.js": {

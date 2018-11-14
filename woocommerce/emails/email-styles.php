@@ -34,7 +34,7 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 // !important; is a gmail hack to prevent styles being stripped if it doesn't like something.
 ?>
 #wrapper {
-	background-color: <?php echo esc_attr( $bg ); ?>;
+	background-color: WhiteSmoke;
 	margin: 0;
 	padding: 70px 0 70px 0;
 	-webkit-text-size-adjust: none !important;
@@ -43,15 +43,15 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 
 #template_container {
 	box-shadow: 0 1px 4px rgba(0,0,0,0.1) !important;
-	background-color: <?php echo esc_attr( $body ); ?>;
-	border: 1px solid <?php echo esc_attr( $bg_darker_10 ); ?>;
-	border-radius: 3px !important;
+	background-color: white;
+	border: 3px solid #fff0fc;
+	border-radius: 1px !important;
 }
 
 #template_header {
-	background-color: <?php echo esc_attr( $base ); ?>;
+	background-color: #fff0fc;
 	border-radius: 3px 3px 0 0 !important;
-	color: <?php echo esc_attr( $base_text ); ?>;
+	color: black;
 	border-bottom: 0;
 	font-weight: bold;
 	line-height: 100%;
@@ -61,7 +61,7 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 
 #template_header h1,
 #template_header h1 a {
-	color: <?php echo esc_attr( $base_text ); ?>;
+	color: red;
 }
 
 #template_footer td {
@@ -71,7 +71,7 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 
 #template_footer #credit {
 	border:0;
-	color: <?php echo esc_attr( $base_lighter_40 ); ?>;
+	color: black;
 	font-family: Arial;
 	font-size:12px;
 	line-height:125%;
@@ -116,7 +116,7 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 }
 
 #body_content_inner {
-	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
+	color: Black;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 14px;
 	line-height: 150%;
@@ -124,17 +124,17 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 }
 
 .td {
-	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
+	color: red;
 	border: 1px solid <?php echo esc_attr( $body_darker_10 ); ?>;
 }
 
 .text {
-	color: <?php echo esc_attr( $text ); ?>;
+	color: black;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 }
 
 .link {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: red;
 }
 
 #header_wrapper {
@@ -143,7 +143,7 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 }
 
 h1 {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: red;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 30px;
 	font-weight: 300;
@@ -155,7 +155,7 @@ h1 {
 }
 
 h2 {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: red;
 	display: block;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 18px;
@@ -166,7 +166,7 @@ h2 {
 }
 
 h3 {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: red;
 	display: block;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 16px;
@@ -177,12 +177,13 @@ h3 {
 }
 
 a {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: red;
 	font-weight: normal;
 	text-decoration: underline;
 }
 
-img {
+img {	
+	max-width:150px;
 	border: none;
 	display: inline;
 	font-size: 14px;

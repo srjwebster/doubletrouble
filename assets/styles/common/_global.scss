@@ -29,11 +29,31 @@
   font-style: normal;
 }
 
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
 body {
   font: 400 16pt apercu;
   color: $brand-text-1;
   line-height: 1.5;
-  outline:none;
+  outline: none;
+  overflow: scroll;
+  height: 100%;
+}
+
+body::-webkit-scrollbar {
+
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
 
 $font1-r-m: 400 0.9em apercu;
@@ -49,7 +69,8 @@ a:hover {
   color: $brand-text-2;
   margin: 0 5px;
 }
-.fa-heart-o{
+
+.fa-heart-o {
   color: $brand-text-2;
   margin: 0 5px;
 }
@@ -57,5 +78,9 @@ a:hover {
 .fa-heart.page-end {
   display: block;
   text-align: center;
-  margin: 0 auto 2em;
+  margin: 60px auto 2em;
+}
+
+.olark-launch-button{
+  bottom:75px!important;
 }

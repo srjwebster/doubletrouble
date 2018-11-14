@@ -1,0 +1,49 @@
+{
+  "dependencies": {
+    "dt-logo-min.jpg": {
+      "files": [
+        "dt-logo-min.jpg"
+      ]
+    },
+    "select-dropdown.png": {
+      "files": [
+        "select-dropdown.png"
+      ]
+    },
+    "main.js": {
+      "files": [
+        "scripts/main.js",
+        "gatags.js",
+        "scripts/jquery.loupe.min.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "customizer.js": {
+      "files": [
+        "scripts/customizer.js"
+      ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    },
+    "apercu-light-webfont.woff": {
+      "files": [
+        "fonts/apercu-light-webfont.woff"
+      ]
+    },
+    "BrushScriptStd.otf":{
+      "files": [
+        "fonts/BrushScriptStd.otf"
+      ]
+    }
+  },
+  "config": {
+    "devUrl": "https://dtstaging.manyhatsdigital.com"
+  }
+}

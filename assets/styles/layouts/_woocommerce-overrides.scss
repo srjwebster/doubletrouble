@@ -110,7 +110,7 @@ select:focus {
 }
 
 .woocommerce div.product div.summary {
-  margin: 4em 0 2em;
+  margin: 0;
 }
 
 .woocommerce-error, .woocommerce-info, .woocommerce-message {
@@ -157,6 +157,7 @@ select:focus {
   width: 48%;
   padding: 2% 0;
   float: left;
+  min-width:300px;
 }
 
 .woocommerce-page form .form-row .input-text::placeholder {
@@ -504,12 +505,12 @@ div.woocommerce {
 }
 
 #customtext {
-  font-size: 3rem;
+  font-size: 2.5rem;
   position: absolute;
-  top: 35%;
+  top: 25%;
   right: 30%;
-  left: 5%;
-
+  left: 10%;
+  overflow-wrap: break-word;
 }
 
 .woocommerce ul.order_details {
@@ -518,10 +519,12 @@ div.woocommerce {
   background-color: $brand-secondary;
 }
 
-.colour-example-row {
+.colour-example-row,.embroidery-colour-example-row {
   height: 75px;
   color: $brand-text-2;
 }
+
+
 
 .woocommerce div.product form.cart .variations td, .woocommerce div.product form.cart .variations th {
   vertical-align: middle;
@@ -534,7 +537,9 @@ div.woocommerce {
 #pa_colour {
   display: none;
 }
-
+#custom-embroidery-colour{
+  display:none;
+}
 .loupe img {
   max-width: none;
 }
@@ -551,10 +556,6 @@ div.woocommerce {
   color: #F2F2F2 !important;
 }
 
-.pink {
-  color: pink !important;
-}
-
 .silver {
   color: #b8b8b8 !important;
 }
@@ -563,23 +564,49 @@ div.woocommerce {
   color: #da9620 !important;
 }
 
+.pale-pink{
+  color: pink !important;
+}
 .garment-colour-black {
   color: #101010;
 }
-
+.garment-colour-red {
+  color:red;
+}
 .garment-colour-grey {
   color: #aaa8ad;
 }
-
 .garment-colour-pale-pink {
   color: #f7cde3;
 }
-
 .garment-colour-white {
   color: #f7f7f9;
   -webkit-text-stroke: 1px black;
 }
+.garment-colour-blue {
+  color: #a5bfda;
+  -webkit-text-stroke: 1px black;
+}
 
+.embroidery-colour-black {
+  color: #101010;
+}
+.embroidery-colour-red {
+  color:red;
+}
+.embroidery-colour-pale-pink {
+  color: #f7cde3;
+}
+.embroidery-colour-gold {
+  color: #da9620 !important;
+}
+.embroidery-colour-silver {
+  color: #b8b8b8 !important;
+}
+.embroidery-colour-white {
+  color: #f7f7f9;
+  -webkit-text-stroke: 1px black;
+}
 .woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) {
   width: 23%;
   margin: 2% 2% 2% 0;
@@ -595,6 +622,14 @@ div.woocommerce {
   cursor: pointer;
 }
 
+.embroidery-colour-example {
+  padding: 0;
+  margin: 0 1%;
+}
+
+.embroidery-colour-example:hover {
+  cursor: pointer;
+}
 .woocommerce-account .woocommerce-MyAccount-navigation {
   float: none;
   width: 80%;
@@ -632,7 +667,34 @@ table.customer_details tr {
   padding: 2%;
 }
 
+@media (max-width:991px){
+  #customtext {
+    font-size: 2rem;
+    position: absolute;
+    top: 35%;
+    right: 30%;
+    left: 10%;
+  }
+}
+
 @media (max-width: 768px) {
+  .woocommerce div.product{
+    display:flex;
+    flex-direction: column-reverse;
+  }
+  .colour-example-row span,.embroidery-colour-example-row span{
+    display:block;
+  }
+  .colour-example-row,.embroidery-colour-example-row{
+    height: 90px;
+  }
+  #customtext {
+    font-size: 2.5rem;
+    position: absolute;
+    top: 25%;
+    right: 30%;
+    left: 10%;
+  }
   .woocommerce table.shop_table tr a {
     display: block;
     text-align: center;
@@ -663,7 +725,7 @@ table.customer_details tr {
     padding: 20px;
   }
   .woocommerce div.product div.summary {
-    margin-bottom: 2em;
+    margin-bottom: 0em;
   }
   .woocommerce div.product form.cart .variations select {
   }
@@ -693,5 +755,14 @@ table.customer_details tr {
   .woocommerce-page table.cart td.actions .coupon .button[name=apply_coupon] {
     width: 40%;
     float: left;
+  }
+}
+@media (max-width:455px){
+  #customtext {
+    font-size: 1.8rem;
+    position: absolute;
+    top: 25%;
+    right: 25%;
+    left: 5%;
   }
 }

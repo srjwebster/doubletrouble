@@ -36,12 +36,24 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
             <table class="variations" cellspacing="0">
                 <tbody>
 				<?php
-				if ( preg_match( '/Custom/', $product->post->post_title ) ) { ?>
+				if ( preg_match( '/Custom/', get_the_title() ) ) { ?>
                     <tr>
                         <td class="custom-box">
                             <label for="custom-embroidery">Write it out</label>
-                            <textarea data-price name="custom-embroidery" maxlength="30" placeholder=""
+                            <textarea data-price name="custom-embroidery-text" maxlength="30" placeholder=""
                                       rows="3"></textarea>
+                            <select id="custom-embroidery-colour" class="product-options-dropdown"
+                                    name="custom-embroidery-colour"
+                                    data-attribute_name="attribute_pa_custom-embroidery-colour"
+                                    data-show_option_none="yes">
+                                <option value="">Embroidery Colour</option>
+                                <option selected value="black" class="attached enabled">Black</option>
+                                <option value="white" class="attached enabled">White</option>
+                                <option value="pale-pink" class="attached enabled">Pale Pink</option>
+                                <option value="red" class="attached enabled">Red</option>
+                                <option value="silver" class="attached enabled">Silver</option>
+                                <option value="gold" class="attached enabled">Gold</option>
+                            </select>
                         </td>
                     </tr>
 				<?php } ?>
@@ -64,18 +76,35 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 				<?php endforeach; ?>
 
 				<?php
-				if ( isset( $attributes['pa_colour'] ) ) { ?>
+				if ( isset( $attributes['pa_colour'] ) ) {
+
+				    ?>
                     <tr class="colour-example-row">
+
                     <td>
-						<?php echo'<span>COLOUR</span>';
+						<?php echo '<span style="text-transform: uppercase">' . str_replace('Custom ','', $product->get_title()) . ' COLOUR</span>';
 						foreach ( $attributes['pa_colour'] as $colour ) {
 							echo '<i class="fa fa-heart colour-example garment-colour-' . $colour . '" name="' . $colour . '"></i>';
 						}
 						?>
                     </td>
                     </tr><?php
-				} ?>
+				}
 
+	            if ( preg_match( '/Custom/', get_the_title() ) ) { ?>
+                <tr class="embroidery-colour-example-row">
+                    <td>
+                        <span>EMBROIDERY COLOUR</span>
+                        <i class="fa fa-heart embroidery-colour-example embroidery-colour-white" name="white"></i>
+                        <i class="fa fa-heart embroidery-colour-example embroidery-colour-pale-pink"
+                           name="pale-pink"></i>
+                        <i class="fa fa-heart embroidery-colour-example embroidery-colour-red" name="red"></i>
+                        <i class="fa fa-heart embroidery-colour-example embroidery-colour-silver" name="silver"></i>
+                        <i class="fa fa-heart embroidery-colour-example embroidery-colour-gold" name="gold"></i>
+                        <i class="fa fa-heart embroidery-colour-example embroidery-colour-black" name="black"></i>
+                    </td>
+                </tr>
+	            <?php } ?>
                 </tbody>
             </table>
 

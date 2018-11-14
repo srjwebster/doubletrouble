@@ -35,10 +35,11 @@ use Roots\Sage\Extras;
 do_action( 'woocommerce_before_main_content' );
 $counter          = 0; //set counter for acf division row looping.
 $row_counter      = 1;
+$row_to_echo = 0;
 $divider_position = [];
 $divider_content  = [];
-$category_name = '';
-(isset(get_queried_object()->term_id) ? $category_name = get_queried_object()->term_id : '')
+$category_name    = '';
+( isset( get_queried_object()->term_id ) ? $category_name = get_queried_object()->term_id : '' )
 ?>
     <div class="archive-page-row">
 		<?php
@@ -78,7 +79,6 @@ if ( isset( get_queried_object()->term_id ) ) {
 		}
 	}
 }
-
 ?>
 <?php if ( have_posts() ) :
 	/**
@@ -113,13 +113,10 @@ if ( isset( get_queried_object()->term_id ) ) {
 
 	wc_get_template_part( 'content', 'product' );
 	if ( in_array( $row_counter, $divider_position ) ) {
-		foreach ( $divider_content as $row_content ) {
-			if ( $row_content['divider_position'] == $row_counter ) {
-				if ( $counter % 3 == 0 ) {
-					echo "<div class='archive-row-divider'>" . $row_content['divider_text'] . "</div>";
-					$removerow = $row_counter - 1;
-					unset( $divider_content[ $removerow ] );
-				}
+		if ( $divider_content[$row_to_echo]['divider_position'] == $row_counter ) {
+			if ( $counter % Extras\shop_loops() == 0 ) {
+				echo "<div class='archive-row-divider'>" . $divider_content[$row_to_echo]['divider_text'] . "</div>";
+				$row_to_echo++;
 			}
 		}
 	}

@@ -22,13 +22,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post;
 
-if ( ! $post->post_excerpt ) {
+if ( ! $post->post_content ) {
 	return;
 }
 
 ?>
 <div class="woocommerce-product-details__short-description">
 	<?php
-	echo apply_filters( 'woocommerce_short_description', the_field( "product_description") );
+	echo apply_filters( 'woocommerce_short_description', $post->post_content );
 	?>
 </div>

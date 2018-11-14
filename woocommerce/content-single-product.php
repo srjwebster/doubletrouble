@@ -32,7 +32,6 @@ do_action( 'woocommerce_before_single_product' );
 
 if ( post_password_required() ) {
 	echo get_the_password_form();
-
 	return;
 }
 ?>
@@ -68,6 +67,7 @@ if ( post_password_required() ) {
 		 */
 		do_action( 'woocommerce_before_single_product_summary' );
 		?>
+
 		<?php
 		/**
 		 * woocommerce_after_single_product_summary hook.
