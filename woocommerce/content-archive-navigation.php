@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <li><a href="/shop/hoodies">Hoodies</a></li>
     <li><a href="/shop/sweaters">Sweaters</a></li>
     <li><a href="/shop/custom">Custom</a></li>
+    <li><a href="/shop/sale">Sale</a></li>
     <li><a href="/shop/vouchers">Gift Voucher</a></li>
 </ul>
 </div>
